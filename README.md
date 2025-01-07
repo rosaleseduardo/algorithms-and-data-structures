@@ -19,3 +19,7 @@ Extra Important Official References
 # What is the Big O?
 
 Metric used in Software Engineering to measure the efficiency of our algorithms. It is essential for determining how our algorithms will perform under a high workload.
+
+Time is not the only important factor when analyzing an algorithm. The amount of memory used can also be highly relevant. Typically, trade-offs are made between time complexity and space complexity, as improving one often leads to worsening the other.
+
+Therefore, the goal is to find a good balance between the two complexities and choose the one that best suits our needs, given our specific conditions.
