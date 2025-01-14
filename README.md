@@ -29,5 +29,10 @@ Therefore, the goal is to find a good balance between the two complexities and c
 
 ## Sliding Window Pattern
 
-https://blog.algomaster.io/p/f4412a17-7a3a-4d0b-8e39-9ea8f429bf7c
-https://drive.google.com/file/d/1CTRJ3O99iUn8okB3waIQ_2ejOwskskcC/view?usp=drive_link
+- https://blog.algomaster.io/p/f4412a17-7a3a-4d0b-8e39-9ea8f429bf7c
+- https://drive.google.com/file/d/1CTRJ3O99iUn8okB3waIQ_2ejOwskskcC/view?usp=drive_link
+
+## Prefiz Sum Pattern
+
+- https://www.youtube.com/watch?v=yuws7YK0Yng
+- https://drive.google.com/file/d/1GKyMyo6JjgeWvZIem8eKn8WEPCrTyxE8/view?usp=drive_link
