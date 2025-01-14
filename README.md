@@ -10,7 +10,7 @@
 ## Table of Contents
 
 - [What is the Big O?](#what-is-the-big-o)
-- [Patterns](#patterns)
+- [Techniques](#techniques)
 
 Extra Important Official References
 
@@ -25,14 +25,19 @@ Time is not the only important factor when analyzing an algorithm. The amount of
 
 Therefore, the goal is to find a good balance between the two complexities and choose the one that best suits our needs, given our specific conditions.
 
-# Patterns
+# Techniques
+
+## Two Pointers
+
+- https://blog.algomaster.io/p/69025a2e-b0d5-4705-8507-bba16c2691f1
+- https://www.youtube.com/watch?v=-gjxg6Pln50
 
 ## Sliding Window Pattern
 
 - https://blog.algomaster.io/p/f4412a17-7a3a-4d0b-8e39-9ea8f429bf7c
 - https://drive.google.com/file/d/1CTRJ3O99iUn8okB3waIQ_2ejOwskskcC/view?usp=drive_link
 
-## Prefiz Sum Pattern
+## Prefix Sum Pattern
 
 - https://www.youtube.com/watch?v=yuws7YK0Yng
 - https://drive.google.com/file/d/1GKyMyo6JjgeWvZIem8eKn8WEPCrTyxE8/view?usp=drive_link
