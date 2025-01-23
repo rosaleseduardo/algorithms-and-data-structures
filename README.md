@@ -34,6 +34,41 @@ the other.
 Therefore, the goal is to find a good balance between the two complexities and
 choose the one that best suits our needs, given our specific conditions.
 
+### Time & Space complexities
+
+<div align="center">
+   <img src="./assets/time_space_complexities.png" />
+</div>
+
+The **worst** and **average** cases in the chart refer to how algorithms perform under different scenarios, specifically:
+
+_Worst Case_
+
+- Describes the maximum amount of time or space the algorithm will take for the largest and most difficult input.
+- This case represents the upper limit of the algorithm's performance.
+- Used to guarantee that the algorithm will not exceed a specific time or space limit.
+
+  Examples:
+
+  1.  Searching for an element in an unsorted array that doesn't exist (linear search: O(n)O(n)).
+  2.  A quicksort where the pivot always splits the array poorly (worst case: O(n2)O(n2)).
+
+_Average Case_
+
+- Describes the expected performance of the algorithm over a variety of typical inputs.
+- It represents the behavior of the algorithm in real-world usage scenarios.
+- Assumes all inputs are equally likely (unless stated otherwise).
+
+  Examples:
+
+  - Searching for a random element in an unsorted array (linear search: O(n)O(n)).
+  - A quicksort where the pivot splits the array evenly most of the time (average case: O(nlog⁡n)O(nlogn)).
+
+_Key Points_
+
+- Worst Case helps understand the limits of the algorithm and is useful for performance guarantees.
+- Average Case gives a more practical estimate of how the algorithm performs for most inputs.
+
 # Techniques
 
 ## Two Pointers
