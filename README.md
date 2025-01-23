@@ -42,184 +42,216 @@ Get an undertanding of the technique by taking a look at these resources:
 
 ### General Indicators to use it:
 
-- **Linearity:** The problem involves linear traversal or optimization. It means
-  that the problem can be solved by examining or processing the elements of a
-  sequence (such as an array, string, or linked list) in a linear fashion (i.e.,
-  one element at a time, from start to finish, or by controlled movement of
-  pointers).
-- **Two Ends:** Conditions are best evaluated from both ends of a structure.
-- **Adjustable Window:** The solution can be found by expanding or shrinking a
-  range.
-- **Sorting Advantage:** Sorted data simplifies the logic for satisfying
-  conditions.
+The **Two Pointers** technique is a problem-solving strategy where two pointers (or indices) traverse an array (or string) in a specific way to solve the problem efficiently. These pointers can move toward each other, away from each other, or independently, depending on the problem requirements.
 
 Here are the primary contexts where the Two Pointers technique shines:
 
-1. **Finding Pairs or Triplets**
+1. **Non-Contiguous Relationships**
 
-   When searching for pairs or groups of elements that satisfy a condition.
+   The problem involves finding a relationship between two numbers, characters, or elements that don’t have to be contiguous.
 
-   Examples:
+   For example:
 
-   - Find two numbers in a sorted array that sum to a target (Two Sum
-     problem).
-   - Find all unique triplets in an array that sum to zero (3Sum
-     problem).
+   - Finding two numbers in an array whose sum equals a target.
+   - Comparing elements from two separate arrays or strings.
 
-   Why Useful?
-   Reduces complexity from O(n2)O(n2) or O(n3)O(n3) to O(n)O(n) or
-   O(n2)O(n2).
+2. **Sorted Input**
 
-2. **Searching in Sorted Arrays**
+   The input array (or string) is sorted. This is common for problems involving sums, differences, or ranges, as sorting helps simplify the traversal logic.
 
-   When working with sorted data, the Two Pointers technique can efficiently
-   explore the range of elements.
+   For example:
 
-   Examples:
+   - Pair with a target sum.
+   - Counting pairs with a specific difference.
 
-   - Checking for duplicates.
-   - Identifying elements within a specific range.
+3. **Converging or Diverging Pointers**
 
-   Why Useful?
-   Sorted data allows the pointers to adjust dynamically without re-evaluating
-   all elements.
+   The solution requires traversing from opposite ends of the array toward the center (converging), or from one pointer catching up to another (diverging).
 
-3. **Sliding Window Problems**
+4. **Optimization Over Brute Force**
 
-   When dealing with subarray or substring problems, where a window of elements
-   is expanded and contracted.
+   The problem has a brute-force solution involving O(n2)O(n2) nested loops, but a more efficient O(n)O(n) or O(nlog⁡n)O(nlogn) solution is possible using Two Pointers.
 
-   Examples:
+### Common Problem Types That Use Two Pointers
 
-   - Longest substring without repeating characters.
-   - Maximum or minimum subarray sum.
-   - Smallest subarray with a given sum.
+1.  **Pair or Triplet Problems**
 
-   Why Useful?
-   Avoids recalculating values repeatedly by maintaining a running
-   total or condition.
+    - Finding a pair of elements with a specific sum, product, or difference.
+    - Finding three numbers (triplets) in an array that satisfy a condition (e.g., three numbers summing to zero).
 
-4. **Palindromes and Mirror-like Problems**
+2.  **Merging or Comparing**
 
-   When comparing elements from both ends toward the center.
+    - Merging two sorted arrays.
+    - Comparing elements between two strings or arrays for commonalities or differences.
 
-   Examples:
+3.  Partitioning or Rearranging
 
-   - Checking if a string is a palindrome.
-   - Finding the longest palindromic substring.
+    - Rearranging elements in an array (e.g., moving zeros to the end, separating even and odd numbers).
+    - Partitioning an array based on a pivot.
 
-   Why Useful?
-   Eliminates the need for redundant checks or nested loops.
+4.  **Geometry or Range-Based Problems**
+    - Problems involving a "window" of values but without contiguity constraints (e.g., Trapping Rainwater).
 
-5. **Partitioning Problems**
+### How to Identify Two Pointers Problems
 
-   When splitting data into two or more parts based on specific criteria.
+Ask yourself these questions:
 
-   Examples:
+_Does the problem involve finding relationships between pairs or groups of elements?_
 
-   - Dutch National Flag problem (partitioning into three groups).
-   - Rearranging elements (e.g., all negatives before positives).
+- E.g., sum, difference, or product of two numbers.
 
-   Why Useful?
-   Processes elements in-place with minimal extra space.
+_Is the input sorted or can it be sorted?_
 
-6. **Cycle Detection**
+- Many Two Pointers problems assume sorted input for efficiency.
 
-   In problems involving cyclic structures, like linked lists or graphs.
+_Can we solve the problem by traversing the array with two indices instead of using nested loops?_
 
-   Examples:
+- If yes, Two Pointers is a likely fit.
 
-   - Detecting a cycle in a linked list (Floyd’s Cycle Detection).
-   - Finding the starting point of a cycle.
+_Does moving one or both pointers help achieve the solution?_
 
-   Why Useful?
-   Uses two pointers (slow and fast) to detect cycles efficiently.
+- E.g., moving one pointer increases or decreases the value we're analyzing.
 
-7. **Merging Intervals or Arrays**
+### When Two Pointers Doesn't Work
 
-   When working with sorted intervals or arrays that need to be combined or
-   processed together.
+- Input is Not Sorted (or Can't Be Sorted)
 
-   Examples:
+  - Two Pointers often requires a sorted array, but sorting may not be allowed due to constraints.
 
-   - Merging two sorted arrays.
-   - Merging overlapping intervals.
+- Problem Requires Non-Pairwise Relationships
 
-   Why Useful?
-   Maintains order and processes elements with O(n)O(n) complexity.
+  - Problems like finding subsets or permutations need other techniques like Backtracking or Dynamic Programming.
 
-8. **Optimizing Space or Time Complexity**
+- Elements Are Not Comparable
 
-   When aiming to solve problems that can be brute-forced in O(n2)O(n2) or
-   O(n3)O(n3) but want to optimize to O(n)O(n) or O(nlog⁡n)O(nlogn).
+  - If the elements cannot be compared (e.g., complex objects), Two Pointers is not applicable.
 
-   Examples:
+- Order of Elements Matters
 
-   - Maximize/minimize distances, sums, or other metrics between elements.
+  - If the solution depends on maintaining the original order of elements, sorting (needed for Two Pointers) won't work.
+
+- Problems Involving Non-Array Data Structures
+
+  - Two Pointers works on arrays or strings, not graphs, trees, or linked lists.
+
+- Global Constraints or Counting Needed
+
+  - Counting all valid pairs or analyzing global properties may require Hash Maps or other approaches.
+
+- Incremental Movements Are Ineffective
+
+  - If the problem requires analyzing all combinations (e.g., brute force), Two Pointers won’t help.
 
 ## Sliding Window Pattern
 
-- https://blog.algomaster.io/p/f4412a17-7a3a-4d0b-8e39-9ea8f429bf7c
-- https://drive.google.com/file/d/1CTRJ3O99iUn8okB3waIQ_2ejOwskskcC/view?usp=drive_link
+Get an undertanding of the technique by taking a look at these resources:
+
+- [AlgoMaster Newsletter - Sliding Window](https://blog.algomaster.io/p/f4412a17-7a3a-4d0b-8e39-9ea8f429bf7c)
+- [YouTube - How to Use the Sliding Window Technique](https://drive.google.com/file/d/1CTRJ3O99iUn8okB3waIQ_2ejOwskskcC/view?usp=drive_link)
+
+### General Indicators to use it:
+
+The **Sliding Window** technique is useful when dealing with problems that involve **contiguous subarrays or substrings**, and when optimizing a brute-force solution is necessary. Below are **general indicators** that suggest the Sliding Window technique might be a good fit:
+
+1. **Contiguous Subarrays or Substrings**
+
+   The problem explicitly requires finding or analyzing properties of a contiguous portion of an array or string.
+
+   Examples:
+
+   - Find the maximum sum of a subarray of size kk.
+   - Find the length of the smallest subarray whose sum is greater than or equal to ss.
+   - Find all substrings of length kk with unique characters.
+
+2. **Fixed or Variable Window Size**
+
+- The window size is either fixed (e.g., subarray size kk) or variable (e.g., increase or shrink dynamically based on conditions).
+
+  _Fixed Window Example:_
+
+  - Find the average of all subarrays of size kk.
+
+  _Variable Window Example:_
+
+- Find the smallest subarray with a sum greater than or equal to ss.
+
+3. **Optimization Over Brute Force**
+
+   - A brute-force solution involves nested loops to calculate the desired property for every possible subarray or substring, resulting in O(n2)O(n2) or worse time complexity.
+
+   - Sliding Window reduces this complexity by reusing results from the previous window, often achieving O(n)O(n).
+
+   Example:
+
+   Instead of recalculating the sum of a subarray from scratch, you can adjust the sum incrementally as the window slides.
+
+4. **Problems Involving Cumulative Properties**
+
+   Sliding Window works well for problems where you are calculating properties like:
+
+   - Sum
+   - Product
+   - Maximum/Minimum
+   - Frequency of elements
+   - Number of distinct characters
+
+5. **Shrinking the Window Based on Conditions**
+
+   If the problem involves dynamic constraints (e.g., "smallest subarray" or "longest substring without repeating characters"), Sliding Window allows you to adjust the window size by moving the start and/or end pointers.
+
+   Example:
+
+   - Find the longest substring without repeating characters: Use a hash set to track characters and slide the window by removing characters from the start when a duplicate is found.
+
+### Common Problem Types That Use Sliding Window:
+
+_Maximum or Minimum Values:_
+
+- Find the maximum sum of a subarray of size kk.
+- Find the maximum product of a subarray of size kk.
+
+_Count or Length:_
+
+- Find the length of the longest substring with at most kk distinct characters.
+- Find the smallest subarray with a sum greater than ss.
+
+_Character/Element Frequency:_
+
+- Find the longest substring without repeating characters.
+- Find all anagrams of a string in another string.
+
+### How to Identify Sliding Window Problems
+
+Ask yourself these questions:
+
+_Does the problem involve contiguous subarrays or substrings?_
+
+- If yes, Sliding Window is likely applicable.
+
+_Does the problem require optimization over a brute-force solution?_
+
+- If the brute force involves recalculating properties for overlapping subarrays, Sliding Window can help.
+
+_Can I maintain the required information incrementally as the window moves?_
+
+- For example, maintaining a sum, a count, or a frequency map.
+
+### When Sliding Window Doesn't Work
+
+- If the elements you are analyzing are not contiguous (e.g., finding a pair of numbers in an array that sum to a target).
+- If the problem involves combinations, permutations, or other non-contiguous subsets (other techniques like Two Pointers or Dynamic Programming might be better).
 
 ## Prefix Sum Pattern
 
 - https://www.youtube.com/watch?v=yuws7YK0Yng
 - https://drive.google.com/file/d/1GKyMyo6JjgeWvZIem8eKn8WEPCrTyxE8/view?usp=drive_link
 
-1. Understand the Problem
+### KEY DIFFERENCES
 
-   What is the problem asking for?
-   Identify the input, output, and constraints clearly.
-   What type of problem is this?
-   Common types include searching, sorting, optimization, combinatorics, or
-   dynamic programming.
-   What edge cases or special conditions should I handle?
-   Think about edge cases like empty inputs, large numbers, or invalid data.
-
-2. Analyze the Input and Output
-
-   What is the structure of the input data?
-   Is it a string, array, matrix, tree, or graph? This can hint at applicable patterns.
-   What size can the input grow to?
-   If the input is large, you may need an efficient pattern, like sliding window or divide and conquer.
-   Is the output a single value, a subset of input, or something else?
-
-3. Explore Constraints and Optimization
-
-   What are the performance constraints?
-   E.g., can a brute-force solution work within the limits, or is an optimized pattern necessary?
-   Is there a time-space tradeoff to consider?
-   Can you reduce time complexity by using more space, or vice versa?
-   Are the constraints restrictive enough to enable specific optimizations?
-   E.g., "the array is sorted" might point toward binary search.
-
-4. Test the Problem for Feasibility
-
-   Can I break the problem into smaller subproblems?
-   If yes, consider divide and conquer or recursion.
-   Can the problem be solved incrementally?
-   Patterns like sliding window or greedy algorithms may work.
-   Can I precompute results for efficiency?
-   If yes, try preprocessing or caching techniques.
-
-5. Evaluate Patterns for Fit
-
-   Which known patterns align with the problem?
-   Examples of patterns:
-   Two pointers/sliding window for subarray problems.
-   Greedy for optimization problems with local decisions.
-   Backtracking for combinations and permutations.
-   BFS/DFS for tree/graph traversal.
-   Dynamic programming for overlapping subproblems.
-   How does the pattern reduce complexity or improve clarity?
-   Ensure the chosen pattern simplifies implementation.
-
-6. Validate and Refine
-
-   Can I explain the logic of my chosen pattern?
-   If not, revisit and reassess.
-   How will I test my solution against edge cases?
-   Plan tests to validate the robustness of the pattern.
-   Is my implementation scalable?
-   Will it handle the largest possible inputs efficiently?
+| **Aspect**              | **Sliding Window**                                         | **Two Pointers**                                                          | **Prefix Sum**                                                            |
+| ----------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| **Contiguous Elements** | Always works with contiguous subarrays/substrings.         | Not limited to contiguous elements, focuses on conditions.                | Typically works with contiguous subarrays, leveraging cumulative sums.    |
+| **Primary Use Case**    | Problems involving subarrays/substrings (e.g., sum, max).  | Problems involving pairs or specific relationships (e.g., sum to target). | Problems involving range sums or quickly calculating sums over subarrays. |
+| **Window Size**         | Uses a fixed or dynamically adjusted window.               | Typically no window; uses two pointers that move independently.           | No window, relies on cumulative sums over the array.                      |
+| **Efficiency**          | Eliminates redundant calculations for subarrays.           | Works efficiently on sorted data by converging pointers.                  | Precomputes sums in \(O(n)\), allowing \(O(1)\) range sum queries.        |
+| **Common Examples**     | Maximum sum subarray, smallest subarray with sum ≥ target. | Pair of numbers with sum equal to a target, trapping rainwater.           | Range sum queries, subarray sum equals target, difference arrays.         |
