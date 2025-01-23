@@ -19,9 +19,12 @@ Extra Important Official References
 
 # What is the Big O?
 
-Metric used in Software Engineering to measure the efficiency of our algorithms.
-It is essential for determining how our algorithms will perform under a high
-workload.
+A common phrase used for this notation is: _"How code slows as data grows"_
+
+It's the notation used to describe the performance of an algorithm as the amount
+of data increases.
+
+This notation is machine independent. What we are really focusing on is the number of steps to complete and algorithm as we tend to ignore smaller operations (e.g. O(n+1) -> O(n)).
 
 Time is not the only important factor when analyzing an algorithm. The amount of
 memory used can also be highly relevant. Typically, trade-offs are made between
@@ -142,7 +145,7 @@ _Does moving one or both pointers help achieve the solution?_
 
   - If the problem requires analyzing all combinations (e.g., brute force), Two Pointers won’t help.
 
-## Sliding Window Pattern
+## Sliding Window
 
 Get an undertanding of the technique by taking a look at these resources:
 
@@ -241,7 +244,7 @@ _Can I maintain the required information incrementally as the window moves?_
 - If the elements you are analyzing are not contiguous (e.g., finding a pair of numbers in an array that sum to a target).
 - If the problem involves combinations, permutations, or other non-contiguous subsets (other techniques like Two Pointers or Dynamic Programming might be better).
 
-## Prefix Sum Pattern
+## Prefix Sum
 
 - https://www.youtube.com/watch?v=yuws7YK0Yng
 - https://drive.google.com/file/d/1GKyMyo6JjgeWvZIem8eKn8WEPCrTyxE8/view?usp=drive_link
