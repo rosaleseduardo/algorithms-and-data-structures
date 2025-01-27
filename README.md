@@ -281,8 +281,54 @@ _Can I maintain the required information incrementally as the window moves?_
 
 ## Prefix Sum
 
-- https://www.youtube.com/watch?v=yuws7YK0Yng
-- https://drive.google.com/file/d/1GKyMyo6JjgeWvZIem8eKn8WEPCrTyxE8/view?usp=drive_link
+Get an undertanding of the technique by taking a look at these resources:
+
+- [Prefix Sum Array And Range Sum Queries](https://drive.google.com/file/d/1GKyMyo6JjgeWvZIem8eKn8WEPCrTyxE8/view?usp=drive_link)
+- [YouTube - Prefix Sum in 4 minutes | LeetCode Pattern](https://www.youtube.com/watch?v=yuws7YK0Yng)
+
+### General Indicators to use it:
+
+The **Prefix Sum** technique is a fundamental concept in computer science, particularly useful for problems involving cumulative sums or differences. By preprocessing an array into a prefix sum array, you can efficiently query the sum of elements in a given range or solve other related problems.
+
+The prefix sum array is an auxiliary array where each element at index i contains the cumulative sum of the original array elements from the start up to index i.
+
+_Prefix Sum Array Formula:_
+
+- prefix[i] = prefix[i-1] + arr[i] (for i > 0)
+- prefix[0] = arr[0]
+
+This preprocessing allows you to calculate the sum of elements in a range [l, r] efficiently.
+
+_Range Sum Formula:_
+
+- sum[l, r] = prefix[r] - prefix[l-1] (for l > 0)
+- sum[0, r] = prefix[r] (for l = 0)
+
+The **Prefix Sum** technique is applicable in scenarios where:
+
+1. **Sum of Subarrays:**
+
+- The problem involves finding the sum of elements in one or multiple subarrays quickly.
+- Example: Find the sum of elements in multiple ranges.
+
+2. **Cumulative Analysis:**
+
+- You need to analyze cumulative properties like sums or averages over a sequence.
+- Example: Determine the average of elements in a range.
+
+3. **Optimization Over Brute Force:**
+
+- A naive approach recalculates the sum of a range repeatedly, leading to O(n2)O(n2) complexity for multiple queries.
+- Prefix Sum reduces it to O(n)O(n) preprocessing and O(1)O(1) per query.
+
+4. **Difference Arrays:**
+
+- If you need to perform incremental updates over a range and query cumulative effects, prefix sums can help.
+
+### When Prefix Sum Doesn't Work
+
+- When the problem involves dynamic updates (e.g., changing an element in the array). Fenwick Trees or Segment Trees are better suited.
+- When the problem involves non-cumulative properties, like finding the maximum or minimum element in a range.
 
 ### KEY DIFFERENCES
 
