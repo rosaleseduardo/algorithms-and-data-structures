@@ -185,7 +185,7 @@ _Does moving one or both pointers help achieve the solution?_
 Get an undertanding of the technique by taking a look at these resources:
 
 - [AlgoMaster Newsletter - Sliding Window](https://blog.algomaster.io/p/f4412a17-7a3a-4d0b-8e39-9ea8f429bf7c)
-- [YouTube - How to Use the Sliding Window Technique](https://drive.google.com/file/d/1CTRJ3O99iUn8okB3waIQ_2ejOwskskcC/view?usp=drive_link)
+- [YouTube - How to Use the Sliding Window Technique](https://youtu.be/dOonV4byDEg?si=CJCyuP4gMp1lz8x0)
 
 ### General Indicators to use it:
 
