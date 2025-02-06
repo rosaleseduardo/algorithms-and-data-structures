@@ -10,7 +10,10 @@
 ## Table of Contents
 
 - [What is the Big O?](#what-is-the-big-o)
-- [Techniques](#techniques)
+- [Array-Related Techniques](#array-related-techniques)
+  - [Two Pointers](#two-pointers)
+  - [Sliding Window](#sliding-window)
+  - [Prefix Sum](#prefix-sum)
 
 Extra Important Official References
 
@@ -69,7 +72,9 @@ _Key Points_
 - Worst Case helps understand the limits of the algorithm and is useful for performance guarantees.
 - Average Case gives a more practical estimate of how the algorithm performs for most inputs.
 
-# Techniques
+# Array Related Techniques
+
+By mastering these techniques, you'll be well-equipped to tackle a wide range of array-related algorithmic challenges:
 
 ## Two Pointers
 
