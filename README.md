@@ -6,6 +6,50 @@
 </div>
 
 <hr>
+To effectively solve array-related algorithm problems, it's essential to master several key techniques and patterns. Here's a curated list to guide your learning:
+
+    Two Pointers Technique:
+        Description: Utilizes two pointers to traverse an array, often from opposite ends, to solve problems like finding pairs that meet certain criteria.
+        Use Cases: Pair sum problems, removing duplicates, and partitioning arrays.
+
+    Sliding Window Technique:
+        Description: Involves creating a window that slides over the array to maintain a subset of elements, optimizing the process of finding subarrays that meet specific conditions.
+        Use Cases: Finding maximum or minimum sums of subarrays, longest substring problems.
+        Resource: Sliding Window Technique
+
+    Fast & Slow Pointers (Tortoise and Hare Algorithm):
+        Description: Employs two pointers moving at different speeds to detect cycles within data structures like linked lists or arrays.
+        Use Cases: Cycle detection, finding the middle of a linked list.
+        Resource: Fast & Slow Pointers
+
+    Prefix Sum Technique:
+        Description: Involves precomputing cumulative sums to efficiently calculate the sum of any subarray in constant time.
+        Use Cases: Range sum queries, subarray sum problems.
+
+    Greedy Algorithms:
+        Description: Makes locally optimal choices at each step with the hope of finding a global optimum.
+        Use Cases: Interval scheduling, coin change problems.
+
+    Divide and Conquer:
+        Description: Breaks a problem into smaller subproblems, solves each recursively, and combines their solutions.
+        Use Cases: Merge sort, quicksort, binary search.
+
+    Dynamic Programming:
+        Description: Solves problems by breaking them down into simpler subproblems and storing the results to avoid redundant computations.
+        Use Cases: Fibonacci sequence, knapsack problem, longest increasing subsequence.
+
+    Backtracking:
+        Description: Explores all possible solutions by building them incrementally and abandoning solutions that fail to meet the criteria.
+        Use Cases: Permutations, combinations, subset problems.
+
+    Sorting Algorithms:
+        Description: Understanding various sorting techniques is crucial for array manipulation and optimization.
+        Use Cases: Organizing data, optimizing search operations.
+        Resource: Sorting Algorithms
+
+    Hashing:
+        Description: Uses hash tables to store and retrieve data efficiently, often in constant time.
+        Use Cases: Finding duplicates, frequency counting, implementing caches.
 
 ## Table of Contents
 
@@ -13,6 +57,7 @@
 - [Array-Related Techniques](#array-related-techniques)
   - [Two Pointers](#two-pointers)
   - [Sliding Window](#sliding-window)
+  - [Fast & Slow Pointers](#fast-and-slow-pointers)
   - [Prefix Sum](#prefix-sum)
 
 Extra Important Official References
@@ -283,6 +328,106 @@ _Can I maintain the required information incrementally as the window moves?_
 
 - If the elements you are analyzing are not contiguous (e.g., finding a pair of numbers in an array that sum to a target).
 - If the problem involves combinations, permutations, or other non-contiguous subsets (other techniques like Two Pointers or Dynamic Programming might be better).
+
+## Fast And Slow Pointers
+
+### General Indicators to use it:
+
+The **Fast & Slow Pointers** technique (also known as the **Tortoise and Hare**
+algorithm) is primarily used for problems that involve iterating through a
+sequence (usually an array or linked list) to identify cycle-related patterns,
+middle elements, or duplicates. It involves two pointers that move at different
+speeds, where the "slow" pointer moves one step at a time, and the "fast"
+pointer moves two steps at a time.
+
+The **Fast & Slow Pointers** technique is most effective when dealing with
+problems related to:
+
+1. **Cycle Detection in Arrays or Linked Lists:**
+
+- The problem involves detecting a **cycle** or loop, which can often be found
+  in linked lists, but can also apply to arrays (e.g., in circular references).
+- Example:
+  - Detect a cycle in a linked list (Floyd’s Cycle-Finding Algorithm).
+  - Detect duplicates or repetitive patterns in a sequence.
+
+2. **Finding Middle Elements:**
+
+- The technique is useful for identifying **middle elements** or performing
+  actions on the "middle" of an array or list.
+- Example:
+  - Find the **middle element** of an array or linked list (efficient without
+    traversing the list twice).
+  - Find the **k-th node from the end** in a linked list.
+
+3. **Problems Involving Pairs:**
+
+- When you need to find or compare pairs or match values in a sequence.
+- Example:
+  - Find if there exists a **pair** in an array whose sum is equal to a target
+    value.
+  - Finding the **duplicate number** in an array where only one number is
+    duplicated.
+
+### Common Problem Types That Use Fast & Slow Pointers:
+
+_Cycle Detection:_
+
+- Detect a Cycle in a Linked List (Floyd’s Cycle Detection)
+- Find the Start of the Cycle in a Linked List (if there is one)
+- Find the Length of the Cycle
+
+_Middle Element / K-th Element:_
+
+- Find the Middle Element of a Linked List (by moving slow pointer one step and
+  ast pointer two steps)
+- Find the K-th Node from the End in a Linked List
+
+_Duplicate Detection:_
+
+- Find Duplicates in an Array (e.g., using Fast & Slow pointers in a cyclic array)
+- Find the Duplicate Number in an array with n + 1 integers where the numbers
+  are between 1 and n (using Floyd's Tortoise and Hare method)
+
+_Pair Problems:_
+
+- Find if a Pair Exists with Given Sum in an Array or List
+- Find the Two Numbers that Add Up to a Target in an Array
+- Find the Missing Number in an Array by Detecting a Mismatch Between Fast and
+  Slow Pointers
+
+### How to Identify Fast & Slow Pointer Problems
+
+Ask yourself these questions:
+
+- **Does the problem involve detecting cycles or loops?**
+
+  - If yes, Fast & Slow Pointers are ideal to solve cycle detection problems
+    (e.g., linked list or circular arrays).
+
+- **Does the problem require finding the middle or end element of a sequence?**
+
+  - If yes, this technique is useful, especially for finding the middle or k-th
+    element efficiently.
+
+- **Can I compare two elements at different positions in the sequence?**
+
+  - The technique works when you need to compare elements overlapping or
+    distanced apart within the sequence.
+
+- **Can I solve the problem by iterating over the sequence with two pointers
+  moving at different speeds?**
+  - If yes, you’re likely dealing with a Fast & Slow Pointer problem.
+
+### When Fast & Slow Pointers Doesn’t Work
+
+- When elements are non-contiguous and cannot be iterated through with a pair
+  of advancing pointers. In such cases, techniques like Sliding Window, Dynamic
+  Programming, or Two Pointers might be more appropriate.
+
+- When you need to consider all combinations or subsets of an array
+  (e.g., combinatorial problems), Backtracking or Dynamic Programming might be
+  more suitable.
 
 ## Prefix Sum
 
