@@ -6,59 +6,25 @@
 </div>
 
 <hr>
-To effectively solve array-related algorithm problems, it's essential to master several key techniques and patterns. Here's a curated list to guide your learning:
-
-    Two Pointers Technique:
-        Description: Utilizes two pointers to traverse an array, often from opposite ends, to solve problems like finding pairs that meet certain criteria.
-        Use Cases: Pair sum problems, removing duplicates, and partitioning arrays.
-
-    Sliding Window Technique:
-        Description: Involves creating a window that slides over the array to maintain a subset of elements, optimizing the process of finding subarrays that meet specific conditions.
-        Use Cases: Finding maximum or minimum sums of subarrays, longest substring problems.
-        Resource: Sliding Window Technique
-
-    Fast & Slow Pointers (Tortoise and Hare Algorithm):
-        Description: Employs two pointers moving at different speeds to detect cycles within data structures like linked lists or arrays.
-        Use Cases: Cycle detection, finding the middle of a linked list.
-        Resource: Fast & Slow Pointers
-
-    Prefix Sum Technique:
-        Description: Involves precomputing cumulative sums to efficiently calculate the sum of any subarray in constant time.
-        Use Cases: Range sum queries, subarray sum problems.
-
-    Greedy Algorithms:
-        Description: Makes locally optimal choices at each step with the hope of finding a global optimum.
-        Use Cases: Interval scheduling, coin change problems.
-
-    Divide and Conquer:
-        Description: Breaks a problem into smaller subproblems, solves each recursively, and combines their solutions.
-        Use Cases: Merge sort, quicksort, binary search.
-
-    Dynamic Programming:
-        Description: Solves problems by breaking them down into simpler subproblems and storing the results to avoid redundant computations.
-        Use Cases: Fibonacci sequence, knapsack problem, longest increasing subsequence.
-
-    Backtracking:
-        Description: Explores all possible solutions by building them incrementally and abandoning solutions that fail to meet the criteria.
-        Use Cases: Permutations, combinations, subset problems.
-
-    Sorting Algorithms:
-        Description: Understanding various sorting techniques is crucial for array manipulation and optimization.
-        Use Cases: Organizing data, optimizing search operations.
-        Resource: Sorting Algorithms
-
-    Hashing:
-        Description: Uses hash tables to store and retrieve data efficiently, often in constant time.
-        Use Cases: Finding duplicates, frequency counting, implementing caches.
 
 ## Table of Contents
 
 - [What is the Big O?](#what-is-the-big-o)
-- [Array-Related Techniques](#array-related-techniques)
+- [Techniques](#techniques)
   - [Two Pointers](#two-pointers)
   - [Sliding Window](#sliding-window)
   - [Fast & Slow Pointers](#fast-and-slow-pointers)
   - [Prefix Sum](#prefix-sum)
+  - [Sorting Algorithms](#sorting-algorithms)
+  - [Hash Tables](#hash-tables)
+  - [Greedy Algorithms](#greedy-algorithms)
+  - [Top 'K' Elements](#top-k-elements)
+  - [Queues](#queues)
+  - [Stacks](#stacks)
+  - [Monotonic Stack](#monotonic-stack)
+  - [Overlapping Intervals](#overlapping-intervals)
+  - [Modified Binary Search](#modified-binary-search)
+  - [Backtracking](#backtracking)
 
 Extra Important Official References
 
@@ -117,7 +83,7 @@ _Key Points_
 - Worst Case helps understand the limits of the algorithm and is useful for performance guarantees.
 - Average Case gives a more practical estimate of how the algorithm performs for most inputs.
 
-# Array Related Techniques
+# Techniques
 
 By mastering these techniques, you'll be well-equipped to tackle a wide range of array-related algorithmic challenges:
 
@@ -126,7 +92,7 @@ By mastering these techniques, you'll be well-equipped to tackle a wide range of
 Get an undertanding of the technique by taking a look at these resources:
 
 - [AlgoMaster Newsletter - Two Pointers](https://blog.algomaster.io/p/69025a2e-b0d5-4705-8507-bba16c2691f1)
-- [YouTube - How to Use the Two Pointer Technique](https://www.youtube.com/watch?v=-gjxg6Pln50)
+- [YouTube | How to Use the Two Pointer Technique](https://www.youtube.com/watch?v=-gjxg6Pln50)
 
 ### General Indicators to use it:
 
@@ -235,7 +201,7 @@ _Does moving one or both pointers help achieve the solution?_
 Get an undertanding of the technique by taking a look at these resources:
 
 - [AlgoMaster Newsletter - Sliding Window](https://blog.algomaster.io/p/f4412a17-7a3a-4d0b-8e39-9ea8f429bf7c)
-- [YouTube - How to Use the Sliding Window Technique](https://youtu.be/dOonV4byDEg?si=CJCyuP4gMp1lz8x0)
+- [YouTube | How to Use the Sliding Window Technique](https://youtu.be/dOonV4byDEg?si=CJCyuP4gMp1lz8x0)
 
 ### General Indicators to use it:
 
@@ -434,7 +400,7 @@ Ask yourself these questions:
 Get an undertanding of the technique by taking a look at these resources:
 
 - [Prefix Sum Array And Range Sum Queries](https://drive.google.com/file/d/1GKyMyo6JjgeWvZIem8eKn8WEPCrTyxE8/view?usp=drive_link)
-- [YouTube - Prefix Sum in 4 minutes | LeetCode Pattern](https://www.youtube.com/watch?v=yuws7YK0Yng)
+- [YouTube | Prefix Sum in 4 minutes | LeetCode Pattern](https://www.youtube.com/watch?v=yuws7YK0Yng)
 
 ### General Indicators to use it:
 
@@ -480,12 +446,65 @@ The **Prefix Sum** technique is applicable in scenarios where:
 - When the problem involves dynamic updates (e.g., changing an element in the array). Fenwick Trees or Segment Trees are better suited.
 - When the problem involves non-cumulative properties, like finding the maximum or minimum element in a range.
 
-### KEY DIFFERENCES
+## Sorting Algorithms
 
-| **Aspect**              | **Sliding Window**                                         | **Two Pointers**                                                          | **Prefix Sum**                                                            |
-| ----------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| **Contiguous Elements** | Always works with contiguous subarrays/substrings.         | Not limited to contiguous elements, focuses on conditions.                | Typically works with contiguous subarrays, leveraging cumulative sums.    |
-| **Primary Use Case**    | Problems involving subarrays/substrings (e.g., sum, max).  | Problems involving pairs or specific relationships (e.g., sum to target). | Problems involving range sums or quickly calculating sums over subarrays. |
-| **Window Size**         | Uses a fixed or dynamically adjusted window.               | Typically no window; uses two pointers that move independently.           | No window, relies on cumulative sums over the array.                      |
-| **Efficiency**          | Eliminates redundant calculations for subarrays.           | Works efficiently on sorted data by converging pointers.                  | Precomputes sums in \(O(n)\), allowing \(O(1)\) range sum queries.        |
-| **Common Examples**     | Maximum sum subarray, smallest subarray with sum ≥ target. | Pair of numbers with sum equal to a target, trapping rainwater.           | Range sum queries, subarray sum equals target, difference arrays.         |
+Get an undertanding of the technique by taking a look at these resources:
+
+- [Medium | Understanding Sorting Algorithms](https://medium.com/jl-codes/understanding-sorting-algorithms-af6222995c8)
+
+## Hash Tables
+
+Get an undertanding of the technique by taking a look at these resources:
+
+- [Medium | Taking Hash Tables Off The Shelf](https://medium.com/basecs/taking-hash-tables-off-the-shelf-139cbf4752f0)
+
+## Greedy Algorithms
+
+Get an undertanding of the technique by taking a look at these resources:
+
+- [freeCodeCamp | What is a Greedy Algorithm? Examples of Greedy Algorithms](https://www.freecodecamp.org/news/greedy-algorithms/)
+
+## Top 'K' Elements
+
+Get an undertanding of the technique by taking a look at these resources:
+
+- [AlgoMasterIO | Top K Elements in 6 minutes](https://youtu.be/6_v6OoxvMOE?si=jJDwCHNMeapkln_h)
+- [Medium | Learning to Love Heaps](https://medium.com/basecs/learning-to-love-heaps-cef2b273a238)
+  - K Largest -> MIN-HEAP
+  - K Smallest -> MAX-HEAP
+
+## Queues
+
+Get an undertanding of the technique by taking a look at these resources:
+
+- [Medium | To Queue Or Not To Queue](https://medium.com/basecs/to-queue-or-not-to-queue-2653bcde5b04)
+
+## Stacks
+
+Get an undertanding of the technique by taking a look at these resources:
+
+- [Medium | Stacks and Overflows](https://medium.com/basecs/to-queue-or-not-to-queue-2653bcde5b04)
+
+## Monotonic Stack
+
+Get an undertanding of the technique by taking a look at these resources:
+
+- [YouTube | Monotonic Stack in 6 minutes](https://www.youtube.com/watch?v=DtJVwbbicjQ)
+
+## Overlapping Intervals
+
+Get an undertanding of the technique by taking a look at these resources:
+
+- [AlgoMasterIO | Overlapping Intervals](https://blog.algomaster.io/p/812e72f7-eced-4256-a4c1-00606ae50679)
+
+## Modified Binary Search
+
+Get an undertanding of the technique by taking a look at these resources:
+
+- [AlgoMasterIO | Modified Binary Search](https://blog.algomaster.io/p/d0d81b04-4c2a-4b45-a101-5137c3146686)
+
+## Backtracking
+
+Get an undertanding of the technique by taking a look at these resources:
+
+- [AlgoMasterIO |Backtracking](https://blog.algomaster.io/p/81d42ca2-600c-4252-aa33-a56462090048)
